@@ -30,7 +30,7 @@ const dotsContainer = document.getElementById('dots-container');
 // J'initialise un index à 0 pour la future incrémentation
 let currentIndex = 0;
 
-// Fonction pour mettre à jour le contenu du carrousel
+// Fonctions pour mettre à jour le contenu du carrousel
 function updateSlide(index) {
     const currentSlide = slides[index];
     const bannerImage = document.querySelector('.banner-img');
@@ -39,11 +39,12 @@ function updateSlide(index) {
     bannerImage.src = `./assets/images/slideshow/${currentSlide.image}`;
     tagLine.innerHTML = currentSlide.tagLine;
 
-    // Met à jour la classe 'dot_selected' pour le point correspondant à la diapositive actuelle
+// Met à jour la classe 'dot_selected' pour le point correspondant à la diapositive actuelle
     document.querySelectorAll('.dot').forEach((dot, dotIndex) => {
         dot.classList.toggle('dot_selected', dotIndex === index);
     });
 }
+////////////////////////
 
 // J'ajoute un Event Listener sur la flèche gauche
 arrowLeft.addEventListener('click', (event) => {
